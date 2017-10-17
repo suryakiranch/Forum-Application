@@ -1,0 +1,132 @@
+<html>
+<head>
+<title>Registration</title>
+<script type="text/javascript">
+function User(){
+	var name=registrationform.user.value;
+	if(name.length==0){
+		alert("Name cannot be empty");
+	      //registrationform.user.focus();
+	}
+	else if(!isNaN("name")){
+		alert("Name shouldnot contain number");
+	      //registrationform.user.focus();
+
+	}
+}
+function Pass(){
+	var pass=registrationform.pass.value;
+	if(pass.length==0 || pass.length<5){
+		alert("Passoword cannot be empty and Its lenth should be greater than 5");
+	      //registrationform.user.focus();
+	}
+	}
+function Email(){
+	var email=registrationform.email.value;
+	var dot=email.lastIndexOf(".");
+	var at=email.lastIndexOf("@");
+	var diff=at-dot;
+	var len=email.length;
+	var diff1=len-dot;
+	
+	if(diff<4){
+		alert("Not a valid Email");
+	      registrationform.email.focus();
+	}
+	
+	else if(diff1>3){
+		alert("Not a Valid Email");
+	      registrationform.email.focus();
+
+	}
+}
+function Gender(){
+	
+	
+	var gen=registrationform.sex.value;
+	
+	
+	if(gen.length==0){
+		alert("Specify a gender");
+	      //registrationform.user.focus();
+	}
+	}
+
+
+</script>
+
+</head>
+
+<body bgcolor = "green">
+
+<form method = "post" name = "registrationform" action="RS">
+<table>
+<tr>
+<td></td>
+<td>Registration Form</td>
+</tr>
+<tr>
+<td>Username</td>
+<td><input type = "text" name = "user" size = "30" /></td>
+</tr>
+<tr>
+<td>Password</td>
+<td><input type = "password" name = "pass" size = "30" /></td>
+</tr>
+
+<tr>
+<td>Email</td>
+<td><input type = "text" name = "email" size = "30"/></td>
+</tr>
+
+<tr>
+<td>Gender</td>
+<td><input type = "radio" name = "sex" checked="checked" value="male"/> Male
+
+<input type = "radio" name = "sex" value="female"/> Female
+</td>
+</tr>
+
+<tr>
+
+<td>Address</td>
+
+<td><textarea rows = "5" cols = "30" onclick="Gender()" name="address">Enter your comments</textarea></td>
+
+</tr>
+
+<tr>
+<td>Hobbies</td>
+
+<td>
+<input type ="checkbox" name="hobbies" value="programming">programming
+
+<input type ="checkbox" name="hobbies" value="browsing">browsing
+
+<input type ="checkbox" name="hobbies" value="reading">reading</td>
+</tr>
+<tr>
+<td>Qualification</td>
+<td>
+<select name="qualification">
+
+<option value="Btech">BTech</option>
+
+<option value="MCA">MCA</option>
+
+<option value="MS">MS</option>
+
+</select><br/>
+</td>
+</tr>
+<tr>
+<td></td>
+<td>
+<input type = "submit" value = "register"/>
+<input type = "reset" value = "clear"/>
+</td>
+</tr>
+</table>
+</form> 
+</body>
+</html>
